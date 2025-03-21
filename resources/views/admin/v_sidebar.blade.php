@@ -50,7 +50,6 @@
                 </li>
                 <!--Akhir Dashboard-->
 
-
                 <!--Awal MASTER DATA-->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -100,7 +99,6 @@
                         </li>
                         <!--Akhir Program Keahlian-->
 
-
                         <!--Awal Jurusan-->
                         <li class="nav-item">
                             <a href="/jurusan" class="nav-link">
@@ -112,7 +110,6 @@
                             </a>
                         </li>
                         <!--Akhir Jurusan-->
-
 
                         <!--Awal Kelas-->
                         <li class="nav-item">
@@ -229,8 +226,6 @@
                 </li>
                 <!--Akhir Guru-->
 
-
-
                 <!--Awal Pembayaran-->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -283,6 +278,86 @@
                 </li>
                 <!--Akhir Pembayaran-->
 
+                <!-- Awal Perpustakaan -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i> <!-- Ikon buku untuk perpustakaan -->
+                        <p>
+                            Perpustakaan
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">4</span> <!-- Jumlah submenu -->
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-- Awal Buku -->
+                        <li class="nav-item">
+                            <a href="/buku" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Buku</p>
+                            </a>
+                        </li>
+                        <!-- Akhir Buku -->
+
+                        <!-- Awal Peminjaman -->
+                        <li class="nav-item">
+                            <a href="/peminjaman" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Peminjaman Buku</p>
+                            </a>
+                        </li>
+                        <!-- Akhir Peminjaman -->
+
+                        <!-- Awal Pengembalian -->
+                        <li class="nav-item">
+                            <a href="/pengembalian" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengembalian Buku</p>
+                            </a>
+                        </li>
+                        <!-- Akhir Pengembalian -->
+
+                        <!-- Awal Anggota Perpustakaan -->
+                        <li class="nav-item">
+                            <a href="/anggota-perpustakaan" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Anggota Perpustakaan</p>
+                            </a>
+                        </li>
+                        <!-- Akhir Anggota Perpustakaan -->
+                         <!-- Awal Informasi -->
+                        <li class="nav-item">
+                            <a href="/informasi" class="nav-link">
+                                <i class="nav-icon fas fa-info-circle"></i> <!-- Ikon informasi -->
+                                <p>
+                                    Informasi
+                                </p>
+                            </a>
+                        </li>
+                        <!-- Akhir Informasi -->
+
+                        <!-- Awal Pustakawan -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user-tie"></i> <!-- Ikon pustakawan -->
+                                <p>
+                                    Pustakawan
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right">2</span> <!-- Jumlah submenu -->
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <!-- Awal Data Pustakawan -->
+                                <li class="nav-item">
+                                    <a href="/pustakawan" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Pustakawan</p>
+                                    </a>
+                                </li>
+                                <!-- Akhir Data Pustakawan -->
+                            </ul>
+                        </li>
+                        <!-- Akhir Perpustakaan -->
+
 
                 
                 
@@ -292,7 +367,6 @@
 
 
                 
-
 
 
 

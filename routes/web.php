@@ -15,6 +15,9 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SiswaKelasController;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\TahunAjaranController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\PustakawanController;  
+use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -162,3 +165,15 @@ Route::put('/jenisbayardetail/edit/{idjenisbayardetail}',[JenisBayarDetailContro
 //========================AKHIR ROUTE JENIS BAYAR DETAIL========================
 
 
+Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
+Route::get('/pustakawan', [PustakawanController::class, 'index'])->name('pustakawan.index');
+Route::post('/pustakawan', [PustakawanController::class, 'store'])->name('pustakawan.store');
+Route::put('/pustakawan/{idpustakawan}', [PustakawanController::class, 'update'])->name('pustakawan.update');
+Route::delete('/pustakawan/{idpustakawan}', [PustakawanController::class, 'destroy'])->name('pustakawan.destroy');
+
+
+
+Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
+Route::post('/buku', [BukuController::class, 'store'])->name('buku.store');
+Route::put('/buku/{id}', [BukuController::class, 'update'])->name('buku.update');
+Route::delete('/buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
