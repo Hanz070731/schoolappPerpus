@@ -15,10 +15,11 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SiswaKelasController;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\TahunAjaranController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\PustakawanController;  
 use App\Http\Controllers\BukuController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\UserController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -165,15 +166,33 @@ Route::put('/jenisbayardetail/edit/{idjenisbayardetail}',[JenisBayarDetailContro
 //========================AKHIR ROUTE JENIS BAYAR DETAIL========================
 
 
-Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
+
+// Informasi Routes
+Route::prefix('informasi')->group(function () {
+    Route::get('/', [InformasiController::class, 'index'])->name('informasi.index');
+    Route::post('/', [InformasiController::class, 'store'])->name('informasi.store');
+    Route::put('/{id}', [InformasiController::class, 'update'])->name('informasi.update');
+    Route::delete('/{id}', [InformasiController::class, 'destroy'])->name('informasi.destroy');
+    
+    // Publish/Unpublish Routes
+    Route::post('/{id}/publish', [InformasiController::class, 'publish'])->name('informasi.publish');
+    Route::post('/{id}/unpublish', [InformasiController::class, 'unpublish'])->name('informasi.unpublish');
+});
+
 Route::get('/pustakawan', [PustakawanController::class, 'index'])->name('pustakawan.index');
 Route::post('/pustakawan', [PustakawanController::class, 'store'])->name('pustakawan.store');
 Route::put('/pustakawan/{idpustakawan}', [PustakawanController::class, 'update'])->name('pustakawan.update');
 Route::delete('/pustakawan/{idpustakawan}', [PustakawanController::class, 'destroy'])->name('pustakawan.destroy');
-
-
-
 Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
 Route::post('/buku', [BukuController::class, 'store'])->name('buku.store');
 Route::put('/buku/{id}', [BukuController::class, 'update'])->name('buku.update');
 Route::delete('/buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
+
+
+Route::prefix('user')->group(function () {
+    // Dashboard Route
+    Route::get('/dashboard', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('user.dashboard');
+    Route::get('/informasi', [UserController::class, 'informasi'])->name('user.informasi');
+    // Book Detail Route
+    Route::get('/books/{idbuku}', [\App\Http\Controllers\User\DashboardController::class, 'show'])->name('user.books.show');
+});
